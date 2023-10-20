@@ -1,4 +1,4 @@
-export let URLGeoJson = "https://raw.githubusercontent.com/muhammad-faisal-ashshidiq/nugas-gis/main/data.json";
+export let URLGeoJson = "https://us-central1-testlogin-366704.cloudfunctions.net/function-7";
 export let tableTag="tr";
 export let tableRowClass="content is-small";
 export let tableTemplate=`

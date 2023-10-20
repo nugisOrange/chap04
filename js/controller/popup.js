@@ -24,7 +24,7 @@ export function onSubmitMarkerClick() {
     let name = getValue('name');
     let volume = getValue('volume');
     let data = {long,lat,volume};
-    postWithToken("https://eoqc0wqfm9sjc6y.m.pipedream.net","Token","dsf9ygf87h98u479y98dj0fs89nfd7",data,afterSubmitCOG);
+    postWithToken("https://eoas7lcexqwmhsl.m.pipedream.net","Token","e0a7fde20802458df9714f2f4e33e751",data,afterSubmitCOG);
     overlay.setPosition(undefined);
     textBlur('popup-closer');
     insertMarker(name,long,lat,volume);
@@ -46,11 +46,11 @@ function popupInputMarker(evt) {
     overlay.setPosition(tile);
 }
 
-function popupGetMarker(evt,feature) {
-    let title = feature.get('id')+"#"+feature.get('name');
+function popupGetMarker(evt,features) {
+    let title = features.get('name');
     setInner('popupinfo-title',title);
-    setValue('idmarker',feature.get('id'));
-    let ctnt = "volume : "+feature.get('volume')+"<br>XY : "+feature.get('geometry').flatCoordinates;
+    setValue('idmarker',features.get('id'));
+    let ctnt = "type : "+features.getGeometry().getType()+"<br>XY : "+toLonLat(evt.coordinate);
     setInner('popupinfo-content',ctnt);
     popupinfo.setPosition(evt.coordinate);
 }
