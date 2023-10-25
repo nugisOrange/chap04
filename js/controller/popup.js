@@ -24,7 +24,7 @@ export function onSubmitMarkerClick() {
     let name = getValue('name');
     let volume = getValue('volume');
     let data = {long,lat,volume};
-    postWithToken("https://eoas7lcexqwmhsl.m.pipedream.net","Token","e0a7fde20802458df9714f2f4e33e751",data,afterSubmitCOG);
+    postWithToken(urlPostGCF,"Token","",data,afterSubmitCOG);
     overlay.setPosition(undefined);
     textBlur('popup-closer');
     insertMarker(name,long,lat,volume);
