@@ -1,4 +1,5 @@
-export let URLGeoJson = "https://us-central1-testlogin-366704.cloudfunctions.net/function-7";
+export let URLGeoJson = "https://asia-southeast2-project3-403614.cloudfunctions.net/getDataGis";
+export let URLPostGCF = "https://asia-southeast2-project3-403614.cloudfunctions.net/insertDataGis";
 export let tableTag="tr";
 export let tableRowClass="content is-small";
 export let tableTemplate=`
