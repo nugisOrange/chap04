@@ -4,18 +4,18 @@ import {tableTemplate, tableRowClass, tableTag} from "../template/template.js";
 import {map} from '../config/configpeta.js';
 import Draw from 'https://cdn.skypack.dev/ol/interaction/Draw.js';
 
-// export function getTokenFromAPI() {
-//     const tokenUrl = "https://asia-southeast2-gilartest.cloudfunctions.net/zlogingis";
-//     fetch(tokenUrl)
-//       .then(response => response.json())
-//       .then(tokenData => {
-//         if (tokenData.token) {
-//           userToken = tokenData.token;
-//           console.log('Token dari API:', userToken);
-//         }
-//       })
-//       .catch(error => console.error('Gagal mengambil token:', error));
-//   }
+export function getTokenFromAPI() {
+    const tokenUrl = "https://asia-southeast2-gilartest.cloudfunctions.net/zlogingis";
+    fetch(tokenUrl)
+      .then(response => response.json())
+      .then(tokenData => {
+        if (tokenData.token) {
+          userToken = tokenData.token;
+          console.log('Token dari API:', userToken);
+        }
+      })
+      .catch(error => console.error('Gagal mengambil token:', error));
+  }
 
 export function isiRowPoint(value){
     if (value.geometry.type === "Point") {
