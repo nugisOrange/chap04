@@ -9,46 +9,42 @@ import {container} from 'https://jscroot.github.io/element/croot.js';
 
 const attributions = '<a href="https://petapedia.github.io/" target="_blank">&copy; PetaPedia Indonesia</a> ';
 
-const place = [107.69200630757098,
-  -6.908971696915415];
+const place = [107.69200630757098, -6.908971696915415];
 
-export let idmarker = {id:1};
+export let idmarker = { id: 1 };
 
 const basemap = new TileLayer({
-    source: new OSM({
-        attributions: attributions,
-      }),
+  source: new OSM({
+    attributions: attributions,
+  }),
 });
 
 const defaultstartmap = new View({
   center: fromLonLat(place),
-  zoom: 15,
+  zoom: 14,
 });
 
 export const overlay = new Overlay({
-    element: container('popup'),
-    autoPan: {
-      animation: {
-        duration: 250,
-      },
+  element: container("popup"),
+  autoPan: {
+    animation: {
+      duration: 250,
     },
-  });
+  },
+});
 
 export const popupinfo = new Overlay({
-    element: container('popupinfo'),
-    autoPan: {
-      animation: {
-        duration: 250,
-      },
+  element: container("popupinfo"),
+  autoPan: {
+    animation: {
+      duration: 250,
     },
+  },
 });
 
 export let map = new Map({
-  layers: [
-        basemap
-    ],
-  overlays: [overlay,popupinfo],
-  target: 'map',
+  layers: [basemap],
+  overlays: [overlay, popupinfo],
+  target: "map",
   view: defaultstartmap,
 });
-
